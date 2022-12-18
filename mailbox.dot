@@ -1,0 +1,13 @@
+digraph G {
+    label="Mailbox hierarchy";
+    labelloc="t"; 
+    server [label="server3 ringbuffer"];
+    thread [label="thread1 ringbuffer"];
+    socket [label="socket50 ringbuffer"];
+    server_container_socket_thread [label="server3 containerapp socket50 thread1 ringbuffer"];
+
+    server -> server_container_socket_thread;
+    thread -> server_container_socket_thread;
+    socket -> server_container_socket_thread;
+
+}
